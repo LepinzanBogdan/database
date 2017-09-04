@@ -1,0 +1,30 @@
+RewriteEngine On
+
+RewriteRule ^show-article/([0-9]+)/?$ index.php?action=ArticleController_showArticle&id_user=$1
+RewriteRule ^show-categories/([0-9]+)/?$ index.php?action=CategoryController_showCategories&id_user=$1
+RewriteRule ^show-category-articles/([^/\.]+)/?/([0-9]+)/?([0-9]+)/?$ index.php?action=ArticleController_showArticleCategory&id=$1&page=$2&id_user=$3
+RewriteRule ^show-details-article/([^/\.]+)/?/([^/\.]+)/?([0-9]+)/?$ index.php?action=ArticleController_showArticleDetails&id=$1&category_id=$2&id_user=$3
+RewriteRule ^increment/([^/\.]+)/?/([^/\.]+)/?([0-9]+)/?$ index.php?action=ArticleController_updateView&idArticol=$1&views=$2&id_user=$3
+RewriteRule ^article-add-delete-update/([0-9]+)/?$ index.php?action=ArticleController_addDeleteUpdateArticle&id_user=$1
+RewriteRule ^article-add-edit/([^/\.]+)/?/([0-9]+)/?$ index.php?action=ArticleController_addUpdateArticle&id=$1&id_user=$2
+RewriteRule ^article-add-edit/([0-9]+)/?$ index.php?action=ArticleController_addUpdateArticle&id_user=$1
+RewriteRule ^category-add-delete-update/([0-9]+)/?$ index.php?action=ArticleController_addDeleteUpdateCategory&id_user=$1
+RewriteRule ^category-add-edit/([^/\.]+)/?/([0-9]+)/?$ index.php?action=ArticleController_addUpdateCategory&id=$1&id_user=$2
+RewriteRule ^category-add-edit/([0-9]+)/?$ index.php?action=ArticleController_addUpdateCategory&id_user=$1
+
+
+RewriteRule ^show-article index.php?action=ArticleController_showArticle
+RewriteRule ^show-categories index.php?action=CategoryController_showCategories
+RewriteRule ^show-category-articles/([^/\.]+)/?/([0-9]+)/?$ index.php?action=ArticleController_showArticleCategory&id=$1&page=$2
+RewriteRule ^show-details-article/([^/\.]+)/?/([^/\.]+)/?$ index.php?action=ArticleController_showArticleDetails&id=$1&category_id=$2
+RewriteRule ^increment/([^/\.]+)/?/([^/\.]+)/?$ index.php?action=ArticleController_updateView&idArticol=$1&views=$2
+RewriteRule ^article-add-delete-update index.php?action=ArticleController_addDeleteUpdateArticle
+RewriteRule ^article-add-edit/([^/\.]+)/?$ index.php?action=ArticleController_addUpdateArticle&id=$1
+RewriteRule ^article-add-edit/ index.php?action=ArticleController_addUpdateArticle
+RewriteRule ^category-add-delete-update index.php?action=ArticleController_addDeleteUpdateCategory
+RewriteRule ^category-add-edit/([^/\.]+)/?$ index.php?action=ArticleController_addUpdateCategory&id=$1
+RewriteRule ^category-add-edit/ index.php?action=ArticleController_addUpdateCategory
+RewriteRule ^login index.php?action=UserController_login
+RewriteRule ^register index.php?action=UserController_register
+
+
